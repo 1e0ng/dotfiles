@@ -24,6 +24,8 @@ nmap <leader>a <Esc>:Ack!
 
 execute pathogen#infect()
 
+let g:neocomplete#enable_at_startup = 1
+
 " ==========================================================
 " Basic Settings
 " ==========================================================
