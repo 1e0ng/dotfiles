@@ -1,3 +1,25 @@
+#!/bin/bash
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+#export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+#export PATH="$HOME/meteor:$PATH"
+export PATH="$HOME/meteor-up/bin:$PATH"
+export PATH="/usr/local/bin:/usr/sbin:$PATH"
+
+# Openssl
+OPENSSL_PATH=/usr/local/opt/openssl
+if [ -d "$OPENSSL_PATH" ];then
+  export PATH=$OPENSSL_PATH/bin:$PATH
+  export LD_LIBRARY_PATH=$OPENSSL_PATH/lib:$LD_LIBRARY_PATH
+  export CPATH=$OPENSSL_PATH/include:$LD_LIBRARY_PATH
+fi
+
+#############################################################################
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -169,12 +191,4 @@ export GIT_EDITOR="vim"
 # Add git and svn branch names
 export PS1="$PS1\$(parse_git_branch)\$(parse_svn_branch) "
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
-#export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
-export PATH="$HOME/meteor:$PATH"
-export PATH="$HOME/meteor-up/bin:$PATH"
