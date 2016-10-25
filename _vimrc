@@ -139,7 +139,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " ============================================================
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
-autocmd FileType html,xhtml,xml,css,less,scss,javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,xhtml,xml,css,less,scss,javascript,yaml setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 " Python
 "au BufRead *.py compiler nose
@@ -152,7 +152,7 @@ au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 set colorcolumn=79
 set clipboard=unnamed
 set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,chinese,cp936,gbk,gb2312
+set fileencodings=ucs-bom,utf-8,chinese,cp936,gbk,gb2312,shift_jis
 
 highlight whitespaceEOL ctermbg=1 guibg=red
 autocmd BufNewFile,BufRead * syntax match whitespaceEOL /\s\+$/
