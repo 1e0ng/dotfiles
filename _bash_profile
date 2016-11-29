@@ -191,13 +191,11 @@ export GIT_EDITOR="vim"
 # Add git and svn branch names
 export PS1="$PS1\$(parse_git_branch)\$(parse_svn_branch) "
 
-
-
-PATH="/Users/leon/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/Users/leon/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/leon/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/leon/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/leon/perl5"; export PERL_MM_OPT;
+PATH="/Users/leon.sun/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/Users/leon.sun/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/leon.sun/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/leon.sun/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/leon.sun/perl5"; export PERL_MM_OPT;
 
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/work
@@ -206,8 +204,19 @@ export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/Cellar/libevent/2.0.22/include:$PATH"
 export PATH="/usr/local/Cellar/pcre/8.39/include::$PATH"
 
-export GRADLE_HOME=/Users/leon/gradle-2.13
+export GRADLE_HOME=/Users/leon.sun/gradle-2.13
 export PATH="$GRADLE_HOME/bin:$PATH"
 
-# added by travis gem
-[ -f /Users/leon/.travis/travis.sh ] && source /Users/leon/.travis/travis.sh
+# Go project
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=/Users/leon.sun/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+
+#mysql.server start
+
+alias redis-start="sudo launchctl start io.redis.redis-server"
+alias redis-stop="sudo launchctl stop io.redis.redis-server"
+#redis-start
+
+source /Users/leon.sun/go/src/github.com/myteksi/go/scripts/env-vars.sh $GOPATH/src/github.com/myteksi/go -ci
