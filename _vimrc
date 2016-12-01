@@ -83,7 +83,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 """" Reading/Writing
 set noautowrite             " Never write a file unless I request it.
 set noautowriteall          " NEVER.
-set noautoread              " Don't automatically re-read changed files.
+set autoread              " Don't automatically re-read changed files.
 set modeline                " Allow vim options to be embedded in files;
 set modelines=5             " they must be within the first or last 5 lines.
 set ffs=unix,mac        " Try recognizing dos, unix, and mac line endings.
@@ -157,3 +157,14 @@ set fileencodings=ucs-bom,utf-8,chinese,cp936,gbk,gb2312,shift_jis
 highlight whitespaceEOL ctermbg=1 guibg=red
 autocmd BufNewFile,BufRead * syntax match whitespaceEOL /\s\+$/
 syntax match whitespaceEOL /\s\+$/
+
+let g:go_fmt_command = "goimports"
+
+nnoremap <silent> gr :GoReferrers<cr>
+nnoremap <silent> gb :GoInstall<cr>
+:command GoB GoInstall
+
+let g:QF_ASP='~/work/go/src/github.com/myteksi/go'
+
+let g:go_highlight_operators= 1
+let g:go_def_mode = 'godef'
