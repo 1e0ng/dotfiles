@@ -7,7 +7,7 @@ function link_file {
         mv $target $target.df.bak
     fi
 
-    ln -sf ${source} ${target}
+    ln -sfh ${source} ${target}
 }
 
 function unlink_file {
@@ -39,3 +39,7 @@ else
 fi
 
 git submodule update --init --recursive
+
+sh ~/.oh-my-zsh/tools/install.sh
+
+sh ~/.fonts/install.sh
