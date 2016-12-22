@@ -53,6 +53,10 @@ DEFAULT_USER='leon.sun'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
 plugins=(git bundler osx rake ruby go warhol)
 
 source $ZSH/oh-my-zsh.sh
