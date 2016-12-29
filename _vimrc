@@ -97,7 +97,7 @@ set report=0                " : commands always print changed line count.
 set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written.
 set ruler                   " Show some info, even without statuslines.
 set laststatus=2            " Always show statusline, even if only 1 window.
-set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff}) 
+set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})
 
 
 """ Searching and Patterns
@@ -148,6 +148,7 @@ au FileType python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 smart
 au FileType coffee setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+"au BufWrite *.rb :Autoformat
 
 set colorcolumn=79
 set clipboard=unnamed
@@ -162,6 +163,8 @@ let g:go_fmt_command = "goimports"
 
 nnoremap <silent> gr :GoReferrers<cr>
 nnoremap <silent> gb :GoInstall<cr>
+nnoremap <F3> :GoDef<cr>
+nnoremap <F4> :GoImplements<cr>
 :command GoB GoInstall
 
 let g:QF_ASP='~/work/go/src/github.com/myteksi/go'
