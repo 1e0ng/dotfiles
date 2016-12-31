@@ -195,7 +195,7 @@ source /Users/leon.sun/go/src/github.com/myteksi/go/scripts/env-vars.sh $GOPATH/
 
 alias gogo="cd $GOPATH/src/github.com/myteksi/go/"
 
-#mysql.server start
+alias mysql-start="mysql.server start"
 
 alias redis-start="sudo launchctl start io.redis.redis-server"
 alias redis-stop="sudo launchctl stop io.redis.redis-server"
