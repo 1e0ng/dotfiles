@@ -165,6 +165,7 @@ nnoremap <silent> gr :GoReferrers<cr>
 nnoremap <silent> gb :GoInstall<cr>
 nnoremap <F3> :GoDef<cr>
 nnoremap <F4> :GoImplements<cr>
+nnoremap <F5> :GoReferrers<cr>
 :command GoB GoInstall
 
 let g:QF_ASP='~/work/go/src/github.com/myteksi/go'
