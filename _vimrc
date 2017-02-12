@@ -16,6 +16,7 @@ imap <C-W> <C-O><C-W>
 
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=45
 
 " Run command-t file search
 map <leader>f :CommandT<CR>
@@ -70,8 +71,7 @@ set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
 set foldmethod=indent       " allow us to fold on indents
-set foldlevel=99            " don't fold by default
-let g:vim_markdown_folding_disabled=1
+set foldlevel=0            " fold by default
 
 " don't outdent hashes
 inoremap # #
@@ -131,6 +131,8 @@ nnoremap <leader><space> :nohlsearch<cr>
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
+nnoremap <Space> za
+
 " Select the item in the list with enter
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
@@ -159,15 +161,36 @@ highlight whitespaceEOL ctermbg=1 guibg=red
 autocmd BufNewFile,BufRead * syntax match whitespaceEOL /\s\+$/
 syntax match whitespaceEOL /\s\+$/
 
-let g:go_fmt_command = "goimports"
 
 nnoremap <silent> gr :GoReferrers<cr>
 nnoremap <silent> gb :GoInstall<cr>
 nnoremap <F3> :GoDef<cr>
 nnoremap <F4> :GoImplements<cr>
+nnoremap <F5> :GoReferrers<cr>
 :command GoB GoInstall
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
 let g:QF_ASP='~/work/go/src/github.com/myteksi/go'
 
-let g:go_highlight_operators= 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_fmt_command = "goimports"
 let g:go_def_mode = 'godef'
+
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+let g:go_list_type = "quickfix"
