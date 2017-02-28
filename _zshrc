@@ -216,4 +216,10 @@ export DOCKER_MACHINE_NAME=dinghy
 # for arcanist bash completion
 source /usr/local/php/arcanist/resources/shell/bash-completion
 
+# For postgres
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
+# TensorFlow
+export CUDA_HOME=/usr/local/cuda
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
+export PATH="$CUDA_HOME/bin:$PATH"
