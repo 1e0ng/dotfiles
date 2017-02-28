@@ -167,6 +167,7 @@ nnoremap <silent> gb :GoInstall<cr>
 nnoremap <F3> :GoDef<cr>
 nnoremap <F4> :GoImplements<cr>
 nnoremap <F5> :GoReferrers<cr>
+nnoremap <F6> :GoTest<cr>
 :command GoB GoInstall
 
 au FileType go nmap <leader>r <Plug>(go-run)

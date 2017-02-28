@@ -196,8 +196,10 @@ export GOPATH=/Users/leon.sun/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 source /Users/leon.sun/go/src/github.com/myteksi/go/scripts/env-vars.sh $GOPATH/src/github.com/myteksi/go -ci
-
 alias gogo="cd $GOPATH/src/github.com/myteksi/go/"
+
+# Add scripts and Applications to the PATH (we will put the scripts below in ~/Applications)
+export PATH=$PATH:$GOPATH/src/github.com/myteksi/go/scripts:~/Applications
 
 alias mysql-start="mysql.server start"
 
