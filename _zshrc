@@ -223,3 +223,5 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export CUDA_HOME=/usr/local/cuda
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
 export PATH="$CUDA_HOME/bin:$PATH"
+
+alias cov-paysi="gogo;package-coverage -c -prefix=github.com/myteksi/ -depth=2 -i=\"/mocks/|/mock_.*\.go|/lua/|/mrbgenerated/|ffjson|/thrift/|/grab-pb/|/pb/|/proto/|_deprecated/|_resources/|/resources/|/vendor/|/static/|/frontend/|scripts|dist|/gocd-hook/|/local/go/src/|/local/Cellar/go/|z_.*\.go\" ./paysi/"
