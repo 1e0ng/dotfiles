@@ -169,6 +169,7 @@ nnoremap <F4> :GoImplements<cr>
 nnoremap <F5> :GoReferrers<cr>
 nnoremap <F6> :GoCallees<cr>
 nnoremap <F7> :GoTest<cr>
+nnoremap <F8> :GoTests<cr>
 :command GoB GoInstall
 
 au FileType go nmap <leader>r <Plug>(go-run)
