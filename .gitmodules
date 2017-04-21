@@ -31,3 +31,6 @@
 [submodule "_vim/bundle/command-t"]
 	path = _vim/bundle/command-t
 	url = git@github.com:wincent/command-t.git
+[submodule "_vim/bundle/gotests-vim"]
+	path = _vim/bundle/gotests-vim
+	url = https://github.com/buoto/gotests-vim.git
