@@ -22,9 +22,6 @@
 [submodule "_vim/bundle/vim-go"]
 	path = _vim/bundle/vim-go
 	url = git@github.com:fatih/vim-go.git
-[submodule "_fonts"]
-	path = _fonts
-	url = git@github.com:powerline/fonts.git
 [submodule "_vim/bundle/command-t"]
 	path = _vim/bundle/command-t
 	url = git@github.com:wincent/command-t.git
