@@ -39,5 +39,3 @@ else
 fi
 
 git submodule update --init --recursive
-
-sh ~/.fonts/install.sh
