@@ -1,26 +1,22 @@
-# You may need to manually set your language environment
 export LANG=en_US.UTF-8
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
 
 # Preferred editor for local and remote sessions
 set -o vi
 export EDITOR='vim'
 export GIT_EDITOR="vim"
 
-# Compilation flags
-export ARCHFLAGS="-arch x86_64"
+# Bash prompt
+source ~/.git-prompt.sh
+export PS1='\[\033[01;32m\]\[\033[01;34m\]\w $(__git_ps1 "[%s]")\$\[\033[00m\]'
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWUPSTREAM="auto"
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-
-#############################################################################
-
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
-#export USE_CCACHE=1
 #osx color terminal
 export CLICOLOR=1
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
 HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
@@ -28,83 +24,6 @@ HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 HISTCONTROL=ignoreboth
 
 setopt histignoredups
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# Set up TERM variables.
-# vt100 and xterm have no color in vim (at least on unixs), but if we call them xterm-color, they will.
-# (vt100 for F-Secure SSH.)
-# This may well be the case for some other terms, so I'm putting them here.
-# Also set up a variable to indicate whether to set up the title functions.
-# TODO gnome-terminal, or however it reports itself
-case $TERM in
-
-  screen)
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=false
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=false
-    TERM_CAN_TITLE=true
-  ;;
-
-  xterm-color|color_xterm|rxvt|Eterm|screen*) # screen.linux|screen-w
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=false
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=true
-    TERM_CAN_TITLE=true
-  ;;
-
-  linux)
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=false
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=true
-    TERM_CAN_TITLE=false
-  ;;
-
-  xterm|vt100)
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=true
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=false
-    TERM_CAN_TITLE=true
-  ;;
-
-  *xterm*|eterm|rxvt*)
-    TERM_IS_COLOR=true
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=true
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=true
-    TERM_CAN_TITLE=true
-  ;;
-
-  *)
-    TERM_IS_COLOR=false
-    TERM_NOT_RECOGNIZED_AS_COLOR_BY_VIM=false
-    TERM_NOT_RECOGNIZED_BY_SUN_UTILS=false
-    TERM_CAN_TITLE=false
-  ;;
-
-esac
-
-parse_git_branch ()
-{
-  git branch 2> /dev/null | grep '*' | sed 's#*\ \(.*\)#(git::\1)#'
-}
-parse_svn_branch() {
-  parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk -F / '{print "(svn::"$1 "/" $2 ")"}'
-}
-parse_svn_url() {
-  svn info 2>/dev/null | sed -ne 's#^URL: ##p'
-}
-parse_svn_repository_root() {
-  svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
-}
-
-# Add git and svn branch names
-export PS1="$PS1\$(parse_git_branch)\$(parse_svn_branch) "
 
 #####################################################################################################
 
@@ -124,8 +43,6 @@ alias mysql-start="mysql.server start"
 
 alias redis-start="sudo launchctl start io.redis.redis-server"
 alias redis-stop="sudo launchctl stop io.redis.redis-server"
-
-alias cov-paysi="gogo;package-coverage -c -prefix=github.com/myteksi/ -depth=2 -i=\"/mocks/|/mock_.*\.go|/lua/|/mrbgenerated/|ffjson|/thrift/|/grab-pb/|/pb/|/proto/|_deprecated/|_resources/|/resources/|/vendor/|/static/|/frontend/|scripts|dist|/gocd-hook/|/local/go/src/|/local/Cellar/go/|z_.*\.go\" ./paysi/"
 
 # for arcanist bash completion
 source /usr/local/php/arcanist/resources/shell/bash-completion
