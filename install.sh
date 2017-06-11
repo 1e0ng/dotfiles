@@ -40,6 +40,4 @@ fi
 
 git submodule update --init --recursive
 
-sh ~/.oh-my-zsh/tools/install.sh
-
 sh ~/.fonts/install.sh
