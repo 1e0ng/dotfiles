@@ -1,12 +1,13 @@
 [user]
     name = Leon
     email = i@leons.im
+	signingkey = 19F34870F3B28773
 
 [color]
     diff = auto
     status = auto
     branch = auto
-    ui = auto
+	ui = true
 
 [push]
 	default = current
@@ -30,9 +31,16 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
     exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
+	d = difftool
 
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [credential]
 	helper = osxkeychain
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[commit]
+	gpgsign = true

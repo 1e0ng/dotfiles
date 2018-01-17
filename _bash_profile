@@ -32,12 +32,12 @@ export GOROOT=/usr/local/go
 export GOPATH=/Users/leon.sun/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-source /Users/leon.sun/go/src/github.com/myteksi/go/scripts/env-vars.sh $GOPATH/src/github.com/myteksi/go -ci
-alias gogo="cd $GOPATH/src/github.com/myteksi/go/"
+source /Users/leon.sun/go/src/gitlab.myteksi.net/gophers/go/scripts/env-vars.sh $GOPATH/src/gitlab.myteksi.net/gophers/go -ci
+alias gogo="cd $GOPATH/src/gitlab.myteksi.net/gophers/go/"
 alias g="git"
 
 # Add scripts and Applications to the PATH (we will put the scripts below in ~/Applications)
-export PATH=$PATH:$GOPATH/src/github.com/myteksi/go/scripts:~/Applications
+export PATH=$PATH:$GOPATH/src/gitlab.myteksi.net/gophers/go/scripts:~/Applications
 
 alias mysql-start="mysql.server start"
 
@@ -57,3 +57,9 @@ export PATH="$CUDA_HOME/bin:$PATH"
 
 # Docker
 eval $(docker-machine env -u)
+
+source ~/.profile
+export PROTO_PATH=/usr/local/protoc
+export PATH=$PATH:$PROTO_PATH/bin
+# Add Arcanist to path
+export PATH="/Users/leon.sun/.rvm/gems/ruby-2.3.0/bin:/Users/leon.sun/.rvm/gems/ruby-2.3.0@global/bin:/Users/leon.sun/.rvm/rubies/ruby-2.3.0/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/go/bin:/Users/leon.sun/go/bin:/Users/leon.sun/go/src/gitlab.myteksi.net/gophers/go/scripts:/Users/leon.sun/Applications:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/leon.sun/.rvm/bin:/usr/local/sbin:/usr/local/protoc/bin:~/source/arcanist/bin"

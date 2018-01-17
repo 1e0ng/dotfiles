@@ -152,7 +152,7 @@ au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 "au BufWrite *.rb :Autoformat
 
-set colorcolumn=79
+set colorcolumn=119
 set clipboard=unnamed
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,cp936,gbk,gb2312,shift_jis
@@ -181,7 +181,10 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
-let g:QF_ASP='~/work/go/src/github.com/myteksi/go'
+let g:QF_ASP='~/go/src/gitlab.myteksi.net/gophers/go'
+let g:go_guru_scope = ["gitlab.myteksi.net/gophers/go/..."]
+:autocmd BufWritePost */gitlab.myteksi.net/*.go silent execute "!grabbyright -w <afile>" | redraw!
+":autocmd BufWritePost */gitlab.myteksi.net/gophers/go/grab-pay/*.go !paysi-sort-import.sh <afile>
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
