@@ -170,6 +170,7 @@ nnoremap <F5> :GoReferrers<cr>
 nnoremap <F6> :GoCallees<cr>
 nnoremap <F7> :GoTest<cr>
 nnoremap <F8> :GoTests<cr>
+nnoremap <F9> :Gbrowse<cr>
 :command GoB GoInstall
 
 au FileType go nmap <leader>r <Plug>(go-run)
@@ -200,3 +201,5 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 let g:go_list_type = "quickfix"
+
+let g:fugitive_gitlab_domains = ['https://gitlab.myteksi.net']

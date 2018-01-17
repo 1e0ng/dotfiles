@@ -28,3 +28,9 @@
 [submodule "_vim/bundle/gotests-vim"]
 	path = _vim/bundle/gotests-vim
 	url = https://github.com/buoto/gotests-vim.git
+[submodule "_vim/bundle/vim-fugitive"]
+	path = _vim/bundle/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule "_vim/bundle/fugitive-gitlab.vim"]
+	path = _vim/bundle/fugitive-gitlab.vim
+	url = git@github.com:shumphrey/fugitive-gitlab.vim.git
