@@ -23,8 +23,6 @@ HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoreboth
 
-setopt histignoredups
-
 #####################################################################################################
 
 # Go project
