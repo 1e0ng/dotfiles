@@ -1,7 +1,7 @@
 [user]
-    name = Leon
-    email = i@leons.im
-	signingkey = 19F34870F3B28773
+    name = Liang Sun
+    email = i@liangsun.org
+	signingkey = 15E3509296BD0482
 
 [color]
     diff = auto

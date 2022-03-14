@@ -27,23 +27,15 @@ HISTCONTROL=ignoreboth
 
 # Go project
 export GOROOT=/usr/local/go
-export GOPATH=/Users/leon.sun/go
+export GOPATH=/Users/sunliang/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-source /Users/leon.sun/go/src/gitlab.myteksi.net/gophers/go/scripts/env-vars.sh $GOPATH/src/gitlab.myteksi.net/gophers/go -ci
-alias gogo="cd $GOPATH/src/gitlab.myteksi.net/gophers/go/"
 alias g="git"
-
-# Add scripts and Applications to the PATH (we will put the scripts below in ~/Applications)
-export PATH=$PATH:$GOPATH/src/gitlab.myteksi.net/gophers/go/scripts:~/Applications
 
 alias mysql-start="mysql.server start"
 
 alias redis-start="sudo launchctl start io.redis.redis-server"
 alias redis-stop="sudo launchctl stop io.redis.redis-server"
-
-# for arcanist bash completion
-source /usr/local/php/arcanist/resources/shell/bash-completion
 
 # For postgres
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
@@ -60,4 +52,5 @@ source ~/.profile
 export PROTO_PATH=/usr/local/protoc
 export PATH=$PATH:$PROTO_PATH/bin
 # Add Arcanist to path
-export PATH="/Users/leon.sun/.rvm/gems/ruby-2.3.0/bin:/Users/leon.sun/.rvm/gems/ruby-2.3.0@global/bin:/Users/leon.sun/.rvm/rubies/ruby-2.3.0/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/go/bin:/Users/leon.sun/go/bin:/Users/leon.sun/go/src/gitlab.myteksi.net/gophers/go/scripts:/Users/leon.sun/Applications:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/leon.sun/.rvm/bin:/usr/local/sbin:/usr/local/protoc/bin:~/source/arcanist/bin":$PATH
+export PATH="/Users/sunliang/.rvm/gems/ruby-2.3.0/bin:/Users/sunliang/.rvm/gems/ruby-2.3.0@global/bin:/Users/sunliang/.rvm/rubies/ruby-2.3.0/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Applications/Wireshark.app/Contents/MacOS:/usr/local/go/bin:/Users/sunliang/go/bin:/Users/sunliang/Applications:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/sunliang/.rvm/bin:/usr/local/sbin:/usr/local/protoc/bin:~/source/arcanist/bin":$PATH
+export GPG_TTY=$(tty)
