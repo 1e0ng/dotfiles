@@ -7,7 +7,7 @@ function link_file {
         mv $target $target.df.bak
     fi
 
-    ln -sfh ${source} ${target}
+    ln -sf ${source} ${target}
 }
 
 function unlink_file {

@@ -153,7 +153,7 @@ au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 "au BufWrite *.rb :Autoformat
 
 set colorcolumn=119
-set clipboard=unnamed
+set clipboard=unnamedplus
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,cp936,gbk,gb2312,shift_jis
 
