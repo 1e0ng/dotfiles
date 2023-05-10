@@ -1,36 +1,36 @@
 [submodule "_vim/bundle/nerdtree"]
 	path = _vim/bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
+    url = https://github.com/preservim/nerdtree.git 
 [submodule "_vim/bundle/surround"]
 	path = _vim/bundle/surround
-	url = git@github.com:tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "_vim/bundle/solarized"]
 	path = _vim/bundle/solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "_vim/bundle/tern_for_vim"]
 	path = _vim/bundle/tern_for_vim
-	url = git@github.com:marijnh/tern_for_vim.git
+	url = https://github.com/ternjs/tern_for_vim.git
 [submodule "_vim/bundle/neocomplete"]
 	path = _vim/bundle/neocomplete
-	url = git@github.com:Shougo/neocomplete.vim.git
+	url = https://github.com/Shougo/neocomplete.vim.git
 [submodule "_vim/bundle/supertab"]
 	path = _vim/bundle/supertab
-	url = git@github.com:ervandew/supertab.git
+	url = https://github.com/ervandew/supertab.git
 [submodule "_vim/bundle/vim-flake8"]
 	path = _vim/bundle/vim-flake8
-	url = git@github.com:nvie/vim-flake8.git
+	url = https://github.com/nvie/vim-flake8.git
 [submodule "_vim/bundle/vim-go"]
 	path = _vim/bundle/vim-go
-	url = git@github.com:fatih/vim-go.git
+	url = https://github.com/fatih/vim-go.git
 [submodule "_vim/bundle/command-t"]
 	path = _vim/bundle/command-t
-	url = git@github.com:wincent/command-t.git
+	url = https://github.com/wincent/command-t.git
 [submodule "_vim/bundle/gotests-vim"]
 	path = _vim/bundle/gotests-vim
 	url = https://github.com/buoto/gotests-vim.git
 [submodule "_vim/bundle/vim-fugitive"]
 	path = _vim/bundle/vim-fugitive
-	url = git@github.com:tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "_vim/bundle/fugitive-gitlab.vim"]
 	path = _vim/bundle/fugitive-gitlab.vim
-	url = git@github.com:shumphrey/fugitive-gitlab.vim.git
+	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
